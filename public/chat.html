@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Sistema de Chat</title>
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1>Sistema de Chat</h1>
+      <a href="index.html" class="btn">Sair</a>
+    </header>
+    <main class="chat-main">
+      <div class="chat-sidebar">
+        <h2 id="nome-da-sala">JavaScript</h2>
+        <h3>Usuários</h3>
+        <ul id="usuarios"></ul>
+      </div>
+      <div class="chat-mensagens"></div>
+    </main>
+
+    <div class="chat-form-container">
+      <form id="chat-form">
+        <input
+          id="msg"
+          type="text"
+          placeholder="Digite sua mensagem..."
+          required
+          autocomplete="off"
+        />
+        <button class="btn">Enviar</button>
+      </form>
+    </div>
+  </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

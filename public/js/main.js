@@ -28,6 +28,13 @@ function exibirMensagem(mensagem) {
   document.querySelector('.chat-mensagens').appendChild(div);
 }
 
+function exibirMensagemSistema(mensagem) {
+  const div = document.createElement('div');
+  div.classList.add('mensagem-sistema');
+  div.innerHTML = `<p>${mensagem}</p>`;
+  document.querySelector('.chat-mensagens').appendChild(div);
+}
+
 // Pegar valores das variaveis usuario e sala da URL
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -48,6 +55,13 @@ socket.on('atualizarUsuariosDasSalas', ({ nomeDaSala, listaDeUsuarios }) => {
 
 socket.on('mensagem', (mensagem) => {
   exibirMensagem(mensagem);
+
+  // Rolagem automatica
+  chatMessagesDom.scrollTop = chatMessagesDom.scrollHeight;
+});
+
+socket.on('mensagem-sistema', (mensagem) => {
+  exibirMensagemSistema(mensagem);
 
   // Rolagem automatica
   chatMessagesDom.scrollTop = chatMessagesDom.scrollHeight;

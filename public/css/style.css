@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 :root {
-	--azul: #a6b2ff;
-	--azul-2: #7386ff;
+	--laranja: #f4b142;
+	--azul: #4285f4;
 	--branco: #e6e9ff;
+	--salmao: #ecd4d4;
 }
 
 * {
@@ -35,7 +36,7 @@ a {
 .btn {
 	cursor: pointer;
 	padding: 5px 15px;
-	background: var(--azul-2);
+	background: var(--azul);
 	color: #fff;
 	border: 0;
 	border-radius: 5px;
@@ -104,10 +105,19 @@ a {
 	overflow-wrap: break-word;
 }
 
+.chat-mensagens .mensagem-sistema {
+	padding: 10px;
+	margin-bottom: 15px;
+	background-color: var(--salmao);
+	border-radius: 5px;
+	overflow-wrap: break-word;
+	text-align: center;
+}
+
 .chat-mensagens .mensagem .meta {
 	font-size: 15px;
 	font-weight: bold;
-	color: var(--azul-2);
+	color: var(--azul);
 	opacity: 0.7;
 	margin-bottom: 7px;
 }
@@ -143,7 +153,7 @@ a {
 .home-header {
 	text-align: center;
 	padding: 20px;
-	background: var(--azul);
+	background: var(--laranja);
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
@@ -184,7 +194,7 @@ a {
 	margin-top: 20px;
 	width: 100%;
 	padding: 12px;
-	background-color: var(--azul-2);
+	background-color: var(--azul);
 }
 
 @media (max-width: 700px) {

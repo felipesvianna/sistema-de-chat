@@ -29,15 +29,15 @@ io.on('connection', (socket) => {
     socket.join(usuario.nomeDaSala);
 
     socket.emit(
-      'mensagem',
-      formatarMensagem(nomeDoBot, `Seja bem-vindo(a) ${usuario.nomeDeUsuario}!`)
+      'mensagem-sistema',
+      `Seja bem-vindo(a) ${usuario.nomeDeUsuario}!`
     );
 
     socket.broadcast
       .to(usuario.nomeDaSala)
       .emit(
-        'mensagem',
-        formatarMensagem(nomeDoBot, `${usuario.nomeDeUsuario} entrou no chat`)
+        'mensagem-sistema',
+        `${usuario.nomeDeUsuario} entrou no chat`
       );
 
     // Envia informacoes atualizadas dos usuarios e da sala
@@ -63,8 +63,8 @@ io.on('connection', (socket) => {
 
     if (usuario) {
       io.to(usuario.nomeDaSala).emit(
-        'mensagem',
-        formatarMensagem(nomeDoBot, `${usuario.nomeDeUsuario} saiu do chat`)
+        'mensagem-sistema',
+        `${usuario.nomeDeUsuario} saiu do chat`
       );
 
       // Envia informacoes atualizadas dos usuarios e da sala

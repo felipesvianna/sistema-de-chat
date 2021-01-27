@@ -2,8 +2,6 @@
 
 > Sistema de chat em tempo real desenvolvido em NodeJS e SocketIO.
 
-![Screenshot](docs/screen1.png)
-![Screenshot](docs/screen2.png)
 ![Screenshot](docs/screen3.png)
 ![Screenshot](docs/screen4.png)
 
